@@ -1,0 +1,13 @@
+# Automatically generated - DO NOT EDIT!
+
+"$schema" = "../../schemas/schema.json"
+
+[[permission]]
+identifier = "allow-get-frontmost-ui-tree"
+description = "Enables the get_frontmost_ui_tree command without any pre-configured scope."
+commands.allow = ["get_frontmost_ui_tree"]
+
+[[permission]]
+identifier = "deny-get-frontmost-ui-tree"
+description = "Denies the get_frontmost_ui_tree command without any pre-configured scope."
+commands.deny = ["get_frontmost_ui_tree"]

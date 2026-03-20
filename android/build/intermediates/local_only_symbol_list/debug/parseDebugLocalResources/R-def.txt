@@ -1,0 +1,4 @@
+R_DEF: Internal format may change without notice
+local
+string tauri_accessibility_service_description
+xml tauri_accessibility_service_config

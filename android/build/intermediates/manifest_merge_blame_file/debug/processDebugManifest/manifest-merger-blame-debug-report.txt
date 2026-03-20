@@ -1,0 +1,33 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.tauri.plugin.androidaccessiblity" >
+4
+5    <uses-sdk android:minSdkVersion="24" />
+6
+7    <application>
+7-->C:\Users\ASUS\Documents\Rust_start\tauri-plugin-android-accessiblity\android\src\main\AndroidManifest.xml:4:5-17:19
+8        <service
+8-->C:\Users\ASUS\Documents\Rust_start\tauri-plugin-android-accessiblity\android\src\main\AndroidManifest.xml:5:9-16:19
+9            android:name="com.tauri.plugin.androidaccessiblity.TauriAccessibilityService"
+9-->C:\Users\ASUS\Documents\Rust_start\tauri-plugin-android-accessiblity\android\src\main\AndroidManifest.xml:6:13-54
+10            android:exported="false"
+10-->C:\Users\ASUS\Documents\Rust_start\tauri-plugin-android-accessiblity\android\src\main\AndroidManifest.xml:8:13-37
+11            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE" >
+11-->C:\Users\ASUS\Documents\Rust_start\tauri-plugin-android-accessiblity\android\src\main\AndroidManifest.xml:7:13-79
+12            <intent-filter>
+12-->C:\Users\ASUS\Documents\Rust_start\tauri-plugin-android-accessiblity\android\src\main\AndroidManifest.xml:9:13-11:29
+13                <action android:name="android.accessibilityservice.AccessibilityService" />
+13-->C:\Users\ASUS\Documents\Rust_start\tauri-plugin-android-accessiblity\android\src\main\AndroidManifest.xml:10:17-92
+13-->C:\Users\ASUS\Documents\Rust_start\tauri-plugin-android-accessiblity\android\src\main\AndroidManifest.xml:10:25-89
+14            </intent-filter>
+15
+16            <meta-data
+16-->C:\Users\ASUS\Documents\Rust_start\tauri-plugin-android-accessiblity\android\src\main\AndroidManifest.xml:13:13-15:78
+17                android:name="android.accessibilityservice"
+17-->C:\Users\ASUS\Documents\Rust_start\tauri-plugin-android-accessiblity\android\src\main\AndroidManifest.xml:14:17-60
+18                android:resource="@xml/tauri_accessibility_service_config" />
+18-->C:\Users\ASUS\Documents\Rust_start\tauri-plugin-android-accessiblity\android\src\main\AndroidManifest.xml:15:17-75
+19        </service>
+20    </application>
+21
+22</manifest>

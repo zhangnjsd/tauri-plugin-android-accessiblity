@@ -1,0 +1,136 @@
+:root {
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.45;
+  font-weight: 400;
+  color: #11233b;
+  background:
+    radial-gradient(circle at 0% 0%, #cfe7ff 0%, transparent 42%),
+    radial-gradient(circle at 100% 100%, #ffe8c2 0%, transparent 40%),
+    #f4f8fc;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 28px 16px 36px;
+}
+
+h1 {
+  margin: 0 0 16px;
+  font-size: 1.8rem;
+}
+
+.controls,
+.actions,
+.logs {
+  border-radius: 12px;
+  border: 1px solid #d6dfeb;
+  background: #ffffffcf;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+
+.controls {
+  padding: 14px;
+}
+
+.line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.line:last-child {
+  margin-bottom: 0;
+}
+
+label {
+  font-size: 0.94rem;
+  font-weight: 600;
+}
+
+input,
+button {
+  border-radius: 8px;
+  border: 1px solid #bfd0e2;
+  padding: 8px 10px;
+  font-size: 0.95rem;
+  color: #11233b;
+  background: #fff;
+}
+
+input[type='number'] {
+  width: 84px;
+}
+
+input[type='text'] {
+  width: 180px;
+}
+
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.actions {
+  margin-top: 14px;
+  padding: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:hover {
+  border-color: #7ca5cd;
+}
+
+button.primary {
+  background: linear-gradient(135deg, #1f8fdf, #1273c1);
+  color: #fff;
+  border-color: #1273c1;
+}
+
+.logs {
+  margin-top: 14px;
+  padding: 10px;
+  min-height: 220px;
+  max-height: 52vh;
+  overflow: auto;
+}
+
+.logs pre {
+  margin: 0 0 6px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: "IBM Plex Mono", Consolas, monospace;
+  font-size: 0.83rem;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding-top: 18px;
+  }
+
+  input[type='text'] {
+    width: 100%;
+    flex: 1;
+  }
+}

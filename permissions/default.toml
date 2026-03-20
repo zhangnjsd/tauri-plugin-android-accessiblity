@@ -1,0 +1,9 @@
+[default]
+description = "Default permissions for the plugin"
+permissions = [
+	"allow-ping",
+	"allow-check-accessibility-enabled",
+	"allow-open-accessibility-settings",
+	"allow-get-frontmost-ui-tree",
+	"allow-click-node",
+]

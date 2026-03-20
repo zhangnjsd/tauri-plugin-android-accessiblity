@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tauri_accessibility_service_description">Tauri accessibility bridge for UI inspection and node actions</string>
+</resources>

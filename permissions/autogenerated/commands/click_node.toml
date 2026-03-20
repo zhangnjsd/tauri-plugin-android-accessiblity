@@ -1,0 +1,13 @@
+# Automatically generated - DO NOT EDIT!
+
+"$schema" = "../../schemas/schema.json"
+
+[[permission]]
+identifier = "allow-click-node"
+description = "Enables the click_node command without any pre-configured scope."
+commands.allow = ["click_node"]
+
+[[permission]]
+identifier = "deny-click-node"
+description = "Denies the click_node command without any pre-configured scope."
+commands.deny = ["click_node"]
