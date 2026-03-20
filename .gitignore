@@ -1,18 +1,30 @@
-/.vs
+# OS
 .DS_Store
-.Thumbs.db
-*.sublime*
+Thumbs.db
+
+# Editors / IDE
+.vs/
 .idea/
+.vscode/
+*.sublime*
+
+# Logs
 debug.log
+
+# JavaScript package managers (this repo uses bun)
 package-lock.json
-.vscode/settings.json
 yarn.lock
-bun.lock
 
-/.tauri
-/target
+# Rust / Tauri build outputs
+/.tauri/
+/target/
 Cargo.lock
-node_modules/
 
-dist-js
-dist
+# Android build outputs
+android/.gradle/
+android/build/
+
+# Node modules and generated JS bundles
+node_modules/
+dist/
+dist-js/

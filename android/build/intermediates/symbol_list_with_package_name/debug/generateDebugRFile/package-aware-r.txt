@@ -1,3 +1,0 @@
-com.tauri.plugin.androidaccessiblity
-string tauri_accessibility_service_description
-xml tauri_accessibility_service_config

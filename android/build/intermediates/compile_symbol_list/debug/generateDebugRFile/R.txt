@@ -1,2 +1,0 @@
-int string tauri_accessibility_service_description 0x0
-int xml tauri_accessibility_service_config 0x0
