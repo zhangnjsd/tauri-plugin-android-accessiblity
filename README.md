@@ -1,5 +1,7 @@
 # Tauri Plugin Android Accessibility
 
+[简体中文](./README_zh-cn.md)
+
 A mobile plugin based on Tauri v2 for Android accessibility bridging, providing the following capabilities:
 
 - Check if accessibility services are enabled
