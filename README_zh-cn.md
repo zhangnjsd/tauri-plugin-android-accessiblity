@@ -70,45 +70,45 @@ await clickNode({
 
 ## 3. API 列表
 
-### checkAccessibilityEnabled
+### `checkAccessibilityEnabled`
 
 返回：
 
-- enabled: 当前应用的无障碍服务是否启用
-- serviceId: 当前服务组件 ID
-- enabledServices: 系统当前已启用的服务列表
+- `enabled`: 当前应用的无障碍服务是否启用
+- `serviceId`: 当前服务组件 ID
+- `enabledServices`: 系统当前已启用的服务列表
 
-### openAccessibilitySettings
+### `openAccessibilitySettings`
 
-打开系统无障碍设置页，返回 opened。
+打开系统无障碍设置页，返回 `opened`。
 
-### getFrontmostUiTree
+### `getFrontmostUiTree`
 
 参数：
 
-- maxDepth: 树深限制
-- maxChildrenPerNode: 每节点最大子节点数量
-- includeNonClickable: 是否包含不可点击叶子节点
+- `maxDepth`: 树深限制
+- `maxChildrenPerNode`: 每节点最大子节点数量
+- `includeNonClickable`: 是否包含不可点击叶子节点
 
 返回：
 
-- timestampMs
-- packageName
-- root（递归 UI 节点）
+- `timestampMs`
+- `packageName`
+- `root`（递归 UI 节点）
 
-### clickNode
+### `clickNode`
 
 参数：
 
-- nodeId: UI 树中的节点路径 ID（示例 0.1.2）
-- action: click | longClick | focus
-- fallbackToClickableParent: 目标失败时是否回退父节点 click
+- `nodeId`: UI 树中的节点路径 ID（示例 0.1.2）
+- `action`: click | longClick | focus
+- `fallbackToClickableParent`: 目标失败时是否回退父节点 click
 
 返回：
 
-- success
-- performedOnNodeId
-- message
+- `success`
+- `performedOnNodeId`
+- `message`
 
 ## 4. Android 规范与限制
 

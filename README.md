@@ -72,45 +72,45 @@ await clickNode({
 
 ## 3. API List
 
-### checkAccessibilityEnabled
+### `checkAccessibilityEnabled`
 
 Returns:
 
-- enabled: Whether the current app's accessibility service is enabled
-- serviceId: Current service component ID
-- enabledServices: List of accessibility services currently enabled by the system
+- `enabled`: Whether the current app's accessibility service is enabled
+- `serviceId`: Current service component ID
+- `enabledServices`: List of accessibility services currently enabled by the system
 
-### openAccessibilitySettings
+### `openAccessibilitySettings`
 
-Opens the system accessibility settings page, returns opened.
+Opens the system accessibility settings page, returns `opened`.
 
-### getFrontmostUiTree
+### `getFrontmostUiTree`
 
 Parameters:
 
-- maxDepth: Tree depth limit
-- maxChildrenPerNode: Maximum number of child nodes per node
-- includeNonClickable: Whether to include non-clickable leaf nodes
+- `maxDepth`: Tree depth limit
+- `maxChildrenPerNode`: Maximum number of child nodes per node
+- `includeNonClickable`: Whether to include non-clickable leaf nodes
 
 Returns:
 
-- timestampMs
-- packageName
-- root (recursive UI node)
+- `timestampMs`
+- `packageName`
+- `root` (recursive UI node)
 
-### clickNode
+### `clickNode`
 
 Parameters:
 
-- nodeId: Node path ID in the UI tree (e.g., 0.1.2)
-- action: click | longClick | focus
-- fallbackToClickableParent: Whether to fall back to a parent node click if the target fails
+- `nodeId`: Node path ID in the UI tree (e.g., 0.1.2)
+- `action`: `click` | `longClick` | `focus`
+- `fallbackToClickableParent`: Whether to fall back to a parent node click if the target fails
 
 Returns:
 
-- success
-- performedOnNodeId
-- message
+- `success`
+- `performedOnNodeId`
+- `message`
 
 ## 4. Android Specifications and Limitations
 
