@@ -69,6 +69,68 @@ export interface OpenSettingsResponse {
   opened: boolean
 }
 
+export interface GesturePoint {
+  x: number
+  y: number
+}
+
+export interface GestureStroke {
+  points: GesturePoint[]
+  startTimeMs?: number
+  durationMs: number
+  willContinue?: boolean
+}
+
+export interface PerformGestureRequest {
+  strokes: GestureStroke[]
+}
+
+export interface PerformGestureResponse {
+  success: boolean
+  message?: string | null
+}
+
+export type GlobalActionType =
+  | 'back'
+  | 'home'
+  | 'recents'
+  | 'notifications'
+  | 'quickSettings'
+  | 'powerDialog'
+  | 'lockScreen'
+  | 'takeScreenshot'
+
+export interface GlobalActionRequest {
+  action: GlobalActionType
+}
+
+export interface GlobalActionResponse {
+  success: boolean
+  message?: string | null
+}
+
+export type NodeActionType =
+  | 'click'
+  | 'longClick'
+  | 'focus'
+  | 'clearFocus'
+  | 'select'
+  | 'clearSelection'
+  | 'scrollForward'
+  | 'scrollBackward'
+
+export interface NodeActionRequest {
+  nodeId: string
+  action: NodeActionType
+  fallbackToScrollableParent?: boolean
+}
+
+export interface NodeActionResponse {
+  success: boolean
+  performedOnNodeId?: string | null
+  message?: string | null
+}
+
 export async function checkAccessibilityEnabled(): Promise<AccessibilityPermissionStatus> {
   return await invoke<AccessibilityPermissionStatus>('plugin:android-accessiblity|check_accessibility_enabled')
 }
@@ -85,6 +147,24 @@ export async function getFrontmostUiTree(payload: UiTreeRequest = {}): Promise<U
 
 export async function clickNode(payload: ClickNodeRequest): Promise<ClickNodeResponse> {
   return await invoke<ClickNodeResponse>('plugin:android-accessiblity|click_node', {
+    payload,
+  })
+}
+
+export async function performGesture(payload: PerformGestureRequest): Promise<PerformGestureResponse> {
+  return await invoke<PerformGestureResponse>('plugin:android-accessiblity|perform_gesture', {
+    payload,
+  })
+}
+
+export async function performGlobalAction(payload: GlobalActionRequest): Promise<GlobalActionResponse> {
+  return await invoke<GlobalActionResponse>('plugin:android-accessiblity|perform_global_action', {
+    payload,
+  })
+}
+
+export async function performNodeAction(payload: NodeActionRequest): Promise<NodeActionResponse> {
+  return await invoke<NodeActionResponse>('plugin:android-accessiblity|perform_node_action', {
     payload,
   })
 }

@@ -47,4 +47,26 @@ impl<R: Runtime> AndroidAccessiblity<R> {
       message: Some("Accessibility actions are only available on Android".to_string()),
     })
   }
+
+  pub fn perform_gesture(&self, _payload: PerformGestureRequest) -> crate::Result<PerformGestureResponse> {
+    Ok(PerformGestureResponse {
+      success: false,
+      message: Some("Accessibility actions are only available on Android".to_string()),
+    })
+  }
+
+  pub fn perform_global_action(&self, _payload: GlobalActionRequest) -> crate::Result<GlobalActionResponse> {
+    Ok(GlobalActionResponse {
+      success: false,
+      message: Some("Accessibility actions are only available on Android".to_string()),
+    })
+  }
+
+  pub fn perform_node_action(&self, _payload: NodeActionRequest) -> crate::Result<NodeActionResponse> {
+    Ok(NodeActionResponse {
+      success: false,
+      performed_on_node_id: None,
+      message: Some("Accessibility actions are only available on Android".to_string()),
+    })
+  }
 }

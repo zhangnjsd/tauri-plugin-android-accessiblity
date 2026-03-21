@@ -1,0 +1,13 @@
+# Automatically generated - DO NOT EDIT!
+
+"$schema" = "../../schemas/schema.json"
+
+[[permission]]
+identifier = "allow-perform-global-action"
+description = "Enables the perform_global_action command without any pre-configured scope."
+commands.allow = ["perform_global_action"]
+
+[[permission]]
+identifier = "deny-perform-global-action"
+description = "Denies the perform_global_action command without any pre-configured scope."
+commands.deny = ["perform_global_action"]

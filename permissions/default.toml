@@ -6,4 +6,7 @@ permissions = [
 	"allow-open-accessibility-settings",
 	"allow-get-frontmost-ui-tree",
 	"allow-click-node",
+	"allow-perform-gesture",
+	"allow-perform-global-action",
+	"allow-perform-node-action",
 ]

@@ -61,3 +61,39 @@ pub(crate) async fn click_node<R: Runtime>(
 ) -> Result<ClickNodeResponse> {
     app.android_accessiblity().click_node(payload)
 }
+
+/**
+ * Perform gesture
+ * This command dispatches one or more gesture strokes (supports multi-touch).
+ */
+#[command]
+pub(crate) async fn perform_gesture<R: Runtime>(
+    app: AppHandle<R>,
+    payload: PerformGestureRequest,
+) -> Result<PerformGestureResponse> {
+    app.android_accessiblity().perform_gesture(payload)
+}
+
+/**
+ * Perform global action
+ * This command triggers an Android global accessibility action.
+ */
+#[command]
+pub(crate) async fn perform_global_action<R: Runtime>(
+    app: AppHandle<R>,
+    payload: GlobalActionRequest,
+) -> Result<GlobalActionResponse> {
+    app.android_accessiblity().perform_global_action(payload)
+}
+
+/**
+ * Perform node action
+ * This command performs a generic accessibility action on a specific node.
+ */
+#[command]
+pub(crate) async fn perform_node_action<R: Runtime>(
+    app: AppHandle<R>,
+    payload: NodeActionRequest,
+) -> Result<NodeActionResponse> {
+    app.android_accessiblity().perform_node_action(payload)
+}

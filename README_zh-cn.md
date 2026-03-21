@@ -6,6 +6,9 @@
 - 跳转系统无障碍设置页
 - 获取当前前台窗口的 UI 树快照
 - 按节点 ID 执行点击/长按/聚焦（支持回退到可点击父节点）
+- 手势模拟（点击、长按、滑动、拖拽、多指）
+- 系统级动作（返回、主页、最近任务、通知栏等）
+- 节点通用动作（滚动、焦点、选择等）
 
 ## 1. 功能说明
 
@@ -56,6 +59,9 @@ import {
         openAccessibilitySettings,
         getFrontmostUiTree,
         clickNode,
+        performGesture,
+        performGlobalAction,
+        performNodeAction,
 } from 'tauri-plugin-android-accessiblity-api'
 
 const status = await checkAccessibilityEnabled()
@@ -73,6 +79,26 @@ await clickNode({
         nodeId: '0.1.2',
         action: 'click',
         fallbackToClickableParent: true,
+})
+
+await performGesture({
+        strokes: [
+                {
+                        points: [
+                                { x: 540, y: 1500 },
+                                { x: 540, y: 700 },
+                        ],
+                        durationMs: 320,
+                },
+        ],
+})
+
+await performGlobalAction({ action: 'back' })
+
+await performNodeAction({
+        nodeId: '0.1.0',
+        action: 'scrollForward',
+        fallbackToScrollableParent: true,
 })
 ```
 
@@ -111,6 +137,53 @@ await clickNode({
 - `nodeId`: UI 树中的节点路径 ID（示例 0.1.2）
 - `action`: click | longClick | focus
 - `fallbackToClickableParent`: 目标失败时是否回退父节点 click
+
+返回：
+
+- `success`
+- `performedOnNodeId`
+- `message`
+
+### `performGesture`
+
+参数：
+
+- `strokes`: 手势轨迹数组
+- `strokes[].points`: 路径点数组，`[{ x, y }, ...]`
+- `strokes[].startTimeMs`: 相对起始时间（可选）
+- `strokes[].durationMs`: 手势持续时间（毫秒）
+- `strokes[].willContinue`: 是否续接手势（可选）
+
+说明：
+
+- 点击：传 1 个点 + 短 duration
+- 长按：传 1 个点 + 长 duration
+- 滑动/拖拽：传 2 个或更多点
+- 多指：一次请求中传多条 stroke
+
+返回：
+
+- `success`
+- `message`
+
+### `performGlobalAction`
+
+参数：
+
+- `action`: `back` | `home` | `recents` | `notifications` | `quickSettings` | `powerDialog` | `lockScreen` | `takeScreenshot`
+
+返回：
+
+- `success`
+- `message`
+
+### `performNodeAction`
+
+参数：
+
+- `nodeId`: UI 树节点路径 ID
+- `action`: `click` | `longClick` | `focus` | `clearFocus` | `select` | `clearSelection` | `scrollForward` | `scrollBackward`
+- `fallbackToScrollableParent`: 滚动类动作失败时是否回退到可滚动父节点
 
 返回：
 

@@ -1,0 +1,13 @@
+# Automatically generated - DO NOT EDIT!
+
+"$schema" = "../../schemas/schema.json"
+
+[[permission]]
+identifier = "allow-perform-node-action"
+description = "Enables the perform_node_action command without any pre-configured scope."
+commands.allow = ["perform_node_action"]
+
+[[permission]]
+identifier = "deny-perform-node-action"
+description = "Denies the perform_node_action command without any pre-configured scope."
+commands.deny = ["perform_node_action"]

@@ -40,7 +40,10 @@ pub fn init<R: Runtime>() -> TauriPlugin<R> {
       commands::check_accessibility_enabled,
       commands::open_accessibility_settings,
       commands::get_frontmost_ui_tree,
-      commands::click_node
+      commands::click_node,
+      commands::perform_gesture,
+      commands::perform_global_action,
+      commands::perform_node_action
     ])
     .setup(|app, api| {
       #[cfg(mobile)]

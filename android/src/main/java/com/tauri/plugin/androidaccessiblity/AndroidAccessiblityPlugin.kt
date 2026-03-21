@@ -104,4 +104,79 @@ class AndroidAccessiblityPlugin(private val activity: Activity) : Plugin(activit
     val ret = service.clickNode(nodeId, action, fallbackToClickableParent)
     invoke.resolve(JSObject.fromJSONObject(ret))
   }
+
+  @Command
+  fun performGesture(invoke: Invoke) {
+    val args = invoke.getArgs()
+    val strokes = args.optJSONArray("strokes")
+    if (strokes == null || strokes.length() == 0) {
+      invoke.reject("strokes is required and cannot be empty")
+      return
+    }
+
+    val service = TauriAccessibilityService.currentInstance()
+    if (service == null) {
+      val ret = JSObject()
+      ret.put("success", false)
+      ret.put("message", "Accessibility service is not running or not enabled")
+      invoke.resolve(ret)
+      return
+    }
+
+    val ret = service.performGesture(strokes)
+    invoke.resolve(JSObject.fromJSONObject(ret))
+  }
+
+  @Command
+  fun performGlobalAction(invoke: Invoke) {
+    val args = invoke.getArgs()
+    val action = args.getString("action", null)
+    if (action.isNullOrBlank()) {
+      invoke.reject("action is required")
+      return
+    }
+
+    val service = TauriAccessibilityService.currentInstance()
+    if (service == null) {
+      val ret = JSObject()
+      ret.put("success", false)
+      ret.put("message", "Accessibility service is not running or not enabled")
+      invoke.resolve(ret)
+      return
+    }
+
+    val ret = service.performGlobalActionByName(action)
+    invoke.resolve(JSObject.fromJSONObject(ret))
+  }
+
+  @Command
+  fun performNodeAction(invoke: Invoke) {
+    val args = invoke.getArgs()
+    val nodeId = args.getString("nodeId", null)
+    if (nodeId.isNullOrBlank()) {
+      invoke.reject("nodeId is required")
+      return
+    }
+
+    val action = args.getString("action", null)
+    if (action.isNullOrBlank()) {
+      invoke.reject("action is required")
+      return
+    }
+
+    val fallbackToScrollableParent = args.getBoolean("fallbackToScrollableParent", true)
+
+    val service = TauriAccessibilityService.currentInstance()
+    if (service == null) {
+      val ret = JSObject()
+      ret.put("success", false)
+      ret.put("performedOnNodeId", JSONObject.NULL)
+      ret.put("message", "Accessibility service is not running or not enabled")
+      invoke.resolve(ret)
+      return
+    }
+
+    val ret = service.performNodeAction(nodeId, action, fallbackToScrollableParent)
+    invoke.resolve(JSObject.fromJSONObject(ret))
+  }
 }

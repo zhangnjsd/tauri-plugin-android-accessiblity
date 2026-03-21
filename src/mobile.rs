@@ -62,4 +62,25 @@ impl<R: Runtime> AndroidAccessiblity<R> {
       .run_mobile_plugin("clickNode", payload)
       .map_err(Into::into)
   }
+
+  pub fn perform_gesture(&self, payload: PerformGestureRequest) -> crate::Result<PerformGestureResponse> {
+    self
+      .0
+      .run_mobile_plugin("performGesture", payload)
+      .map_err(Into::into)
+  }
+
+  pub fn perform_global_action(&self, payload: GlobalActionRequest) -> crate::Result<GlobalActionResponse> {
+    self
+      .0
+      .run_mobile_plugin("performGlobalAction", payload)
+      .map_err(Into::into)
+  }
+
+  pub fn perform_node_action(&self, payload: NodeActionRequest) -> crate::Result<NodeActionResponse> {
+    self
+      .0
+      .run_mobile_plugin("performNodeAction", payload)
+      .map_err(Into::into)
+  }
 }

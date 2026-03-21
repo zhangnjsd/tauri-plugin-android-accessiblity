@@ -9,6 +9,9 @@ Default permissions for the plugin
 - `allow-open-accessibility-settings`
 - `allow-get-frontmost-ui-tree`
 - `allow-click-node`
+- `allow-perform-gesture`
+- `allow-perform-global-action`
+- `allow-perform-node-action`
 
 ## Permission Table
 
@@ -119,6 +122,84 @@ Enables the open_accessibility_settings command without any pre-configured scope
 <td>
 
 Denies the open_accessibility_settings command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`android-accessiblity:allow-perform-gesture`
+
+</td>
+<td>
+
+Enables the perform_gesture command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`android-accessiblity:deny-perform-gesture`
+
+</td>
+<td>
+
+Denies the perform_gesture command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`android-accessiblity:allow-perform-global-action`
+
+</td>
+<td>
+
+Enables the perform_global_action command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`android-accessiblity:deny-perform-global-action`
+
+</td>
+<td>
+
+Denies the perform_global_action command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`android-accessiblity:allow-perform-node-action`
+
+</td>
+<td>
+
+Enables the perform_node_action command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`android-accessiblity:deny-perform-node-action`
+
+</td>
+<td>
+
+Denies the perform_node_action command without any pre-configured scope.
 
 </td>
 </tr>

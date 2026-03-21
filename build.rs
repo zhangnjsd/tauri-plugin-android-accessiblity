@@ -4,6 +4,9 @@ const COMMANDS: &[&str] = &[
   "open_accessibility_settings",
   "get_frontmost_ui_tree",
   "click_node",
+  "perform_gesture",
+  "perform_global_action",
+  "perform_node_action",
 ];
 
 fn main() {

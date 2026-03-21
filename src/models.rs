@@ -98,3 +98,61 @@ pub struct ClickNodeResponse {
 pub struct OpenSettingsResponse {
   pub opened: bool,
 }
+
+#[derive(Debug, Clone, Deserialize, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct GesturePoint {
+  pub x: f32,
+  pub y: f32,
+}
+
+#[derive(Debug, Clone, Deserialize, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct GestureStroke {
+  pub points: Vec<GesturePoint>,
+  pub start_time_ms: Option<u64>,
+  pub duration_ms: u64,
+  pub will_continue: Option<bool>,
+}
+
+#[derive(Debug, Clone, Deserialize, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct PerformGestureRequest {
+  pub strokes: Vec<GestureStroke>,
+}
+
+#[derive(Debug, Clone, Default, Deserialize, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct PerformGestureResponse {
+  pub success: bool,
+  pub message: Option<String>,
+}
+
+#[derive(Debug, Clone, Deserialize, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct GlobalActionRequest {
+  pub action: String,
+}
+
+#[derive(Debug, Clone, Default, Deserialize, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct GlobalActionResponse {
+  pub success: bool,
+  pub message: Option<String>,
+}
+
+#[derive(Debug, Clone, Deserialize, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct NodeActionRequest {
+  pub node_id: String,
+  pub action: String,
+  pub fallback_to_scrollable_parent: Option<bool>,
+}
+
+#[derive(Debug, Clone, Default, Deserialize, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct NodeActionResponse {
+  pub success: bool,
+  pub performed_on_node_id: Option<String>,
+  pub message: Option<String>,
+}
