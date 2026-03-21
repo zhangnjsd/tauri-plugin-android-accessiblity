@@ -1,6 +1,6 @@
 // Learn more about Tauri commands at https://v2.tauri.app/develop/calling-rust/#commands
-use tauri_plugin_android_accessiblity::{
-    AndroidAccessiblityExt, ClickNodeRequest, UiTreeRequest,
+use tauri_plugin_android_accessibility::{
+    AndroidAccessibilityExt, ClickNodeRequest, UiTreeRequest,
 };
 
 #[tauri::command]
@@ -12,11 +12,11 @@ fn greet(name: &str) -> String {
 pub fn run() {
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![greet])
-        .plugin(tauri_plugin_android_accessiblity::init())
+        .plugin(tauri_plugin_android_accessibility::init())
         .setup(|app| {
-            let plugin = app.android_accessiblity();
+            let plugin = app.android_accessibility();
 
-            let ping = plugin.ping(tauri_plugin_android_accessiblity::PingRequest {
+            let ping = plugin.ping(tauri_plugin_android_accessibility::PingRequest {
                 value: Some("debug-ping".to_string()),
             });
             println!("[plugin-debug] ping => {:?}", ping);

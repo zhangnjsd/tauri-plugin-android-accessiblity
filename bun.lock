@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "tauri-plugin-android-accessiblity-api",
+      "name": "tauri-plugin-android-accessibility-api",
       "dependencies": {
         "@tauri-apps/api": "^2.0.0",
       },

@@ -7,27 +7,27 @@ use tauri::{
 use crate::models::*;
 
 #[cfg(target_os = "ios")]
-tauri::ios_plugin_binding!(init_plugin_android_accessiblity);
+tauri::ios_plugin_binding!(init_plugin_android_accessibility);
 
 // initializes the Kotlin or Swift plugin classes
 pub fn init<R: Runtime, C: DeserializeOwned>(
   _app: &AppHandle<R>,
   api: PluginApi<R, C>,
-) -> crate::Result<AndroidAccessiblity<R>> {
+) -> crate::Result<AndroidAccessibility<R>> {
   #[cfg(target_os = "android")]
   let handle = api.register_android_plugin(
-    "com.tauri.plugin.androidaccessiblity",
-    "AndroidAccessiblityPlugin",
+    "com.tauri.plugin.androidaccessibility",
+    "AndroidAccessibilityPlugin",
   )?;
   #[cfg(target_os = "ios")]
-  let handle = api.register_ios_plugin(init_plugin_android_accessiblity)?;
-  Ok(AndroidAccessiblity(handle))
+  let handle = api.register_ios_plugin(init_plugin_android_accessibility)?;
+  Ok(AndroidAccessibility(handle))
 }
 
-/// Access to the android-accessiblity APIs.
-pub struct AndroidAccessiblity<R: Runtime>(PluginHandle<R>);
+/// Access to the android-accessibility APIs.
+pub struct AndroidAccessibility<R: Runtime>(PluginHandle<R>);
 
-impl<R: Runtime> AndroidAccessiblity<R> {
+impl<R: Runtime> AndroidAccessibility<R> {
   pub fn ping(&self, payload: PingRequest) -> crate::Result<PingResponse> {
     self
       .0

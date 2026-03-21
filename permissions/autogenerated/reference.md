@@ -25,7 +25,7 @@ Default permissions for the plugin
 <tr>
 <td>
 
-`android-accessiblity:allow-check-accessibility-enabled`
+`android-accessibility:allow-check-accessibility-enabled`
 
 </td>
 <td>
@@ -38,7 +38,7 @@ Enables the check_accessibility_enabled command without any pre-configured scope
 <tr>
 <td>
 
-`android-accessiblity:deny-check-accessibility-enabled`
+`android-accessibility:deny-check-accessibility-enabled`
 
 </td>
 <td>
@@ -51,7 +51,7 @@ Denies the check_accessibility_enabled command without any pre-configured scope.
 <tr>
 <td>
 
-`android-accessiblity:allow-click-node`
+`android-accessibility:allow-click-node`
 
 </td>
 <td>
@@ -64,7 +64,7 @@ Enables the click_node command without any pre-configured scope.
 <tr>
 <td>
 
-`android-accessiblity:deny-click-node`
+`android-accessibility:deny-click-node`
 
 </td>
 <td>
@@ -77,7 +77,7 @@ Denies the click_node command without any pre-configured scope.
 <tr>
 <td>
 
-`android-accessiblity:allow-get-frontmost-ui-tree`
+`android-accessibility:allow-get-frontmost-ui-tree`
 
 </td>
 <td>
@@ -90,7 +90,7 @@ Enables the get_frontmost_ui_tree command without any pre-configured scope.
 <tr>
 <td>
 
-`android-accessiblity:deny-get-frontmost-ui-tree`
+`android-accessibility:deny-get-frontmost-ui-tree`
 
 </td>
 <td>
@@ -103,7 +103,7 @@ Denies the get_frontmost_ui_tree command without any pre-configured scope.
 <tr>
 <td>
 
-`android-accessiblity:allow-open-accessibility-settings`
+`android-accessibility:allow-open-accessibility-settings`
 
 </td>
 <td>
@@ -116,7 +116,7 @@ Enables the open_accessibility_settings command without any pre-configured scope
 <tr>
 <td>
 
-`android-accessiblity:deny-open-accessibility-settings`
+`android-accessibility:deny-open-accessibility-settings`
 
 </td>
 <td>
@@ -129,7 +129,7 @@ Denies the open_accessibility_settings command without any pre-configured scope.
 <tr>
 <td>
 
-`android-accessiblity:allow-perform-gesture`
+`android-accessibility:allow-perform-gesture`
 
 </td>
 <td>
@@ -142,7 +142,7 @@ Enables the perform_gesture command without any pre-configured scope.
 <tr>
 <td>
 
-`android-accessiblity:deny-perform-gesture`
+`android-accessibility:deny-perform-gesture`
 
 </td>
 <td>
@@ -155,7 +155,7 @@ Denies the perform_gesture command without any pre-configured scope.
 <tr>
 <td>
 
-`android-accessiblity:allow-perform-global-action`
+`android-accessibility:allow-perform-global-action`
 
 </td>
 <td>
@@ -168,7 +168,7 @@ Enables the perform_global_action command without any pre-configured scope.
 <tr>
 <td>
 
-`android-accessiblity:deny-perform-global-action`
+`android-accessibility:deny-perform-global-action`
 
 </td>
 <td>
@@ -181,7 +181,7 @@ Denies the perform_global_action command without any pre-configured scope.
 <tr>
 <td>
 
-`android-accessiblity:allow-perform-node-action`
+`android-accessibility:allow-perform-node-action`
 
 </td>
 <td>
@@ -194,7 +194,7 @@ Enables the perform_node_action command without any pre-configured scope.
 <tr>
 <td>
 
-`android-accessiblity:deny-perform-node-action`
+`android-accessibility:deny-perform-node-action`
 
 </td>
 <td>
@@ -207,7 +207,7 @@ Denies the perform_node_action command without any pre-configured scope.
 <tr>
 <td>
 
-`android-accessiblity:allow-ping`
+`android-accessibility:allow-ping`
 
 </td>
 <td>
@@ -220,7 +220,7 @@ Enables the ping command without any pre-configured scope.
 <tr>
 <td>
 
-`android-accessiblity:deny-ping`
+`android-accessibility:deny-ping`
 
 </td>
 <td>

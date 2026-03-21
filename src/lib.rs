@@ -17,24 +17,24 @@ mod models;
 pub use error::{Error, Result};
 
 #[cfg(desktop)]
-use desktop::AndroidAccessiblity;
+use desktop::AndroidAccessibility;
 #[cfg(mobile)]
-use mobile::AndroidAccessiblity;
+use mobile::AndroidAccessibility;
 
-/// Extensions to [`tauri::App`], [`tauri::AppHandle`] and [`tauri::Window`] to access the android-accessiblity APIs.
-pub trait AndroidAccessiblityExt<R: Runtime> {
-  fn android_accessiblity(&self) -> &AndroidAccessiblity<R>;
+/// Extensions to [`tauri::App`], [`tauri::AppHandle`] and [`tauri::Window`] to access the android-accessibility APIs.
+pub trait AndroidAccessibilityExt<R: Runtime> {
+  fn android_accessibility(&self) -> &AndroidAccessibility<R>;
 }
 
-impl<R: Runtime, T: Manager<R>> crate::AndroidAccessiblityExt<R> for T {
-  fn android_accessiblity(&self) -> &AndroidAccessiblity<R> {
-    self.state::<AndroidAccessiblity<R>>().inner()
+impl<R: Runtime, T: Manager<R>> crate::AndroidAccessibilityExt<R> for T {
+  fn android_accessibility(&self) -> &AndroidAccessibility<R> {
+    self.state::<AndroidAccessibility<R>>().inner()
   }
 }
 
 /// Initializes the plugin.
 pub fn init<R: Runtime>() -> TauriPlugin<R> {
-  Builder::new("android-accessiblity")
+  Builder::new("android-accessibility")
     .invoke_handler(tauri::generate_handler![
       commands::ping,
       commands::check_accessibility_enabled,
@@ -47,10 +47,10 @@ pub fn init<R: Runtime>() -> TauriPlugin<R> {
     ])
     .setup(|app, api| {
       #[cfg(mobile)]
-      let android_accessiblity = mobile::init(app, api)?;
+      let android_accessibility = mobile::init(app, api)?;
       #[cfg(desktop)]
-      let android_accessiblity = desktop::init(app, api)?;
-      app.manage(android_accessiblity);
+      let android_accessibility = desktop::init(app, api)?;
+      app.manage(android_accessibility);
       Ok(())
     })
     .build()

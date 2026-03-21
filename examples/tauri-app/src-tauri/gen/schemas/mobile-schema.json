@@ -177,69 +177,105 @@
       "description": "Permission identifier",
       "oneOf": [
         {
-          "description": "Default permissions for the plugin\n#### This default permission set includes:\n\n- `allow-ping`\n- `allow-check-accessibility-enabled`\n- `allow-open-accessibility-settings`\n- `allow-get-frontmost-ui-tree`\n- `allow-click-node`",
+          "description": "Default permissions for the plugin\n#### This default permission set includes:\n\n- `allow-ping`\n- `allow-check-accessibility-enabled`\n- `allow-open-accessibility-settings`\n- `allow-get-frontmost-ui-tree`\n- `allow-click-node`\n- `allow-perform-gesture`\n- `allow-perform-global-action`\n- `allow-perform-node-action`",
           "type": "string",
-          "const": "android-accessiblity:default",
-          "markdownDescription": "Default permissions for the plugin\n#### This default permission set includes:\n\n- `allow-ping`\n- `allow-check-accessibility-enabled`\n- `allow-open-accessibility-settings`\n- `allow-get-frontmost-ui-tree`\n- `allow-click-node`"
+          "const": "android-accessibility:default",
+          "markdownDescription": "Default permissions for the plugin\n#### This default permission set includes:\n\n- `allow-ping`\n- `allow-check-accessibility-enabled`\n- `allow-open-accessibility-settings`\n- `allow-get-frontmost-ui-tree`\n- `allow-click-node`\n- `allow-perform-gesture`\n- `allow-perform-global-action`\n- `allow-perform-node-action`"
         },
         {
           "description": "Enables the check_accessibility_enabled command without any pre-configured scope.",
           "type": "string",
-          "const": "android-accessiblity:allow-check-accessibility-enabled",
+          "const": "android-accessibility:allow-check-accessibility-enabled",
           "markdownDescription": "Enables the check_accessibility_enabled command without any pre-configured scope."
         },
         {
           "description": "Enables the click_node command without any pre-configured scope.",
           "type": "string",
-          "const": "android-accessiblity:allow-click-node",
+          "const": "android-accessibility:allow-click-node",
           "markdownDescription": "Enables the click_node command without any pre-configured scope."
         },
         {
           "description": "Enables the get_frontmost_ui_tree command without any pre-configured scope.",
           "type": "string",
-          "const": "android-accessiblity:allow-get-frontmost-ui-tree",
+          "const": "android-accessibility:allow-get-frontmost-ui-tree",
           "markdownDescription": "Enables the get_frontmost_ui_tree command without any pre-configured scope."
         },
         {
           "description": "Enables the open_accessibility_settings command without any pre-configured scope.",
           "type": "string",
-          "const": "android-accessiblity:allow-open-accessibility-settings",
+          "const": "android-accessibility:allow-open-accessibility-settings",
           "markdownDescription": "Enables the open_accessibility_settings command without any pre-configured scope."
+        },
+        {
+          "description": "Enables the perform_gesture command without any pre-configured scope.",
+          "type": "string",
+          "const": "android-accessibility:allow-perform-gesture",
+          "markdownDescription": "Enables the perform_gesture command without any pre-configured scope."
+        },
+        {
+          "description": "Enables the perform_global_action command without any pre-configured scope.",
+          "type": "string",
+          "const": "android-accessibility:allow-perform-global-action",
+          "markdownDescription": "Enables the perform_global_action command without any pre-configured scope."
+        },
+        {
+          "description": "Enables the perform_node_action command without any pre-configured scope.",
+          "type": "string",
+          "const": "android-accessibility:allow-perform-node-action",
+          "markdownDescription": "Enables the perform_node_action command without any pre-configured scope."
         },
         {
           "description": "Enables the ping command without any pre-configured scope.",
           "type": "string",
-          "const": "android-accessiblity:allow-ping",
+          "const": "android-accessibility:allow-ping",
           "markdownDescription": "Enables the ping command without any pre-configured scope."
         },
         {
           "description": "Denies the check_accessibility_enabled command without any pre-configured scope.",
           "type": "string",
-          "const": "android-accessiblity:deny-check-accessibility-enabled",
+          "const": "android-accessibility:deny-check-accessibility-enabled",
           "markdownDescription": "Denies the check_accessibility_enabled command without any pre-configured scope."
         },
         {
           "description": "Denies the click_node command without any pre-configured scope.",
           "type": "string",
-          "const": "android-accessiblity:deny-click-node",
+          "const": "android-accessibility:deny-click-node",
           "markdownDescription": "Denies the click_node command without any pre-configured scope."
         },
         {
           "description": "Denies the get_frontmost_ui_tree command without any pre-configured scope.",
           "type": "string",
-          "const": "android-accessiblity:deny-get-frontmost-ui-tree",
+          "const": "android-accessibility:deny-get-frontmost-ui-tree",
           "markdownDescription": "Denies the get_frontmost_ui_tree command without any pre-configured scope."
         },
         {
           "description": "Denies the open_accessibility_settings command without any pre-configured scope.",
           "type": "string",
-          "const": "android-accessiblity:deny-open-accessibility-settings",
+          "const": "android-accessibility:deny-open-accessibility-settings",
           "markdownDescription": "Denies the open_accessibility_settings command without any pre-configured scope."
+        },
+        {
+          "description": "Denies the perform_gesture command without any pre-configured scope.",
+          "type": "string",
+          "const": "android-accessibility:deny-perform-gesture",
+          "markdownDescription": "Denies the perform_gesture command without any pre-configured scope."
+        },
+        {
+          "description": "Denies the perform_global_action command without any pre-configured scope.",
+          "type": "string",
+          "const": "android-accessibility:deny-perform-global-action",
+          "markdownDescription": "Denies the perform_global_action command without any pre-configured scope."
+        },
+        {
+          "description": "Denies the perform_node_action command without any pre-configured scope.",
+          "type": "string",
+          "const": "android-accessibility:deny-perform-node-action",
+          "markdownDescription": "Denies the perform_node_action command without any pre-configured scope."
         },
         {
           "description": "Denies the ping command without any pre-configured scope.",
           "type": "string",
-          "const": "android-accessiblity:deny-ping",
+          "const": "android-accessibility:deny-ping",
           "markdownDescription": "Denies the ping command without any pre-configured scope."
         },
         {

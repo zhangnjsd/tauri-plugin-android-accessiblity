@@ -6,14 +6,14 @@ use crate::models::*;
 pub fn init<R: Runtime, C: DeserializeOwned>(
   app: &AppHandle<R>,
   _api: PluginApi<R, C>,
-) -> crate::Result<AndroidAccessiblity<R>> {
-  Ok(AndroidAccessiblity(app.clone()))
+) -> crate::Result<AndroidAccessibility<R>> {
+  Ok(AndroidAccessibility(app.clone()))
 }
 
-/// Access to the android-accessiblity APIs.
-pub struct AndroidAccessiblity<R: Runtime>(AppHandle<R>);
+/// Access to the android-accessibility APIs.
+pub struct AndroidAccessibility<R: Runtime>(AppHandle<R>);
 
-impl<R: Runtime> AndroidAccessiblity<R> {
+impl<R: Runtime> AndroidAccessibility<R> {
   pub fn ping(&self, payload: PingRequest) -> crate::Result<PingResponse> {
     Ok(PingResponse {
       value: payload.value,

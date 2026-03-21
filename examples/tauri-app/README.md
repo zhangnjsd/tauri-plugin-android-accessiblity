@@ -1,4 +1,4 @@
-# Tauri Android Accessiblity Example
+# Tauri Android Accessibility Example
 
 This example app demonstrates all plugin APIs in one debug UI.
 

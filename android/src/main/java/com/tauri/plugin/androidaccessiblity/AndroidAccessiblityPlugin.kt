@@ -1,4 +1,4 @@
-package com.tauri.plugin.androidaccessiblity
+package com.tauri.plugin.androidaccessibility
 
 import android.app.Activity
 import android.content.Intent
@@ -12,7 +12,7 @@ import org.json.JSONArray
 import org.json.JSONObject
 
 @TauriPlugin
-class AndroidAccessiblityPlugin(private val activity: Activity) : Plugin(activity) {
+class AndroidAccessibilityPlugin(private val activity: Activity) : Plugin(activity) {
   @Command
   fun ping(invoke: Invoke) {
     val args = invoke.getArgs()

@@ -177,7 +177,7 @@
 </script>
 
 <main class="container">
-  <h1>Android Accessiblity Plugin Debugger</h1>
+  <h1>Android Accessibility Plugin Debugger</h1>
 
   <div class="controls">
     <div class="line">

@@ -2,7 +2,7 @@ use tauri::{AppHandle, command, Runtime};
 
 use crate::models::*;
 use crate::Result;
-use crate::AndroidAccessiblityExt;
+use crate::AndroidAccessibilityExt;
 
 /**
  * Connectivity check
@@ -13,7 +13,7 @@ pub(crate) async fn ping<R: Runtime>(
     app: AppHandle<R>,
     payload: PingRequest,
 ) -> Result<PingResponse> {
-    app.android_accessiblity().ping(payload)
+    app.android_accessibility().ping(payload)
 }
 
 /**
@@ -24,7 +24,7 @@ pub(crate) async fn ping<R: Runtime>(
 pub(crate) async fn check_accessibility_enabled<R: Runtime>(
     app: AppHandle<R>,
 ) -> Result<AccessibilityPermissionStatus> {
-    app.android_accessiblity().check_accessibility_enabled()
+    app.android_accessibility().check_accessibility_enabled()
 }
 
 /**
@@ -35,7 +35,7 @@ pub(crate) async fn check_accessibility_enabled<R: Runtime>(
 pub(crate) async fn open_accessibility_settings<R: Runtime>(
     app: AppHandle<R>,
 ) -> Result<OpenSettingsResponse> {
-    app.android_accessiblity().open_accessibility_settings()
+    app.android_accessibility().open_accessibility_settings()
 }
 
 /**
@@ -47,7 +47,7 @@ pub(crate) async fn get_frontmost_ui_tree<R: Runtime>(
     app: AppHandle<R>,
     payload: UiTreeRequest,
 ) -> Result<UiTreeResponse> {
-    app.android_accessiblity().get_frontmost_ui_tree(payload)
+    app.android_accessibility().get_frontmost_ui_tree(payload)
 }
 
 /**
@@ -59,7 +59,7 @@ pub(crate) async fn click_node<R: Runtime>(
     app: AppHandle<R>,
     payload: ClickNodeRequest,
 ) -> Result<ClickNodeResponse> {
-    app.android_accessiblity().click_node(payload)
+    app.android_accessibility().click_node(payload)
 }
 
 /**
@@ -71,7 +71,7 @@ pub(crate) async fn perform_gesture<R: Runtime>(
     app: AppHandle<R>,
     payload: PerformGestureRequest,
 ) -> Result<PerformGestureResponse> {
-    app.android_accessiblity().perform_gesture(payload)
+    app.android_accessibility().perform_gesture(payload)
 }
 
 /**
@@ -83,7 +83,7 @@ pub(crate) async fn perform_global_action<R: Runtime>(
     app: AppHandle<R>,
     payload: GlobalActionRequest,
 ) -> Result<GlobalActionResponse> {
-    app.android_accessiblity().perform_global_action(payload)
+    app.android_accessibility().perform_global_action(payload)
 }
 
 /**
@@ -95,5 +95,5 @@ pub(crate) async fn perform_node_action<R: Runtime>(
     app: AppHandle<R>,
     payload: NodeActionRequest,
 ) -> Result<NodeActionResponse> {
-    app.android_accessiblity().perform_node_action(payload)
+    app.android_accessibility().perform_node_action(payload)
 }

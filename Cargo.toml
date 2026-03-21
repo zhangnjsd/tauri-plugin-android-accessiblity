@@ -1,18 +1,18 @@
 [package]
-name = "tauri-plugin-android-accessiblity"
+name = "tauri-plugin-android-accessibility"
 version = "0.2.0"
 authors = [ "ShizukuAqua" ]
 description = "A Tauri plugin that supports Android accessibility features, allowing Tauri applications to interact with Android's accessibility services for enhanced functionality and user experience."
 license = "MIT"
-repository = "https://github.com/zhangnjsd/tauri-plugin-android-accessiblity"
-homepage = "https://github.com/zhangnjsd/tauri-plugin-android-accessiblity"
+repository = "https://github.com/zhangnjsd/tauri-plugin-android-accessibility"
+homepage = "https://github.com/zhangnjsd/tauri-plugin-android-accessibility"
 readme = "README.md"
 keywords = ["tauri", "plugin", "android", "accessibility"]
 categories = ["api-bindings", "gui"]
 edition = "2024"
 rust-version = "1.94.0"
 exclude = ["/examples", "/dist-js", "/guest-js", "/node_modules"]
-links = "tauri-plugin-android-accessiblity"
+links = "tauri-plugin-android-accessibility"
 
 [dependencies]
 tauri = { version = "2.8.5" }

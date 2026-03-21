@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.tauri.plugin.androidaccessiblity"
+    namespace = "com.tauri.plugin.androidaccessibility"
     compileSdk = 34
 
     defaultConfig {

@@ -1,4 +1,4 @@
-package com.tauri.plugin.androidaccessiblity
+package com.tauri.plugin.androidaccessibility
 
 import android.accessibilityservice.AccessibilityService
 import android.accessibilityservice.GestureDescription

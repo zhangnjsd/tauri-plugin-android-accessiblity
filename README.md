@@ -16,23 +16,23 @@ A mobile plugin based on Tauri v2 for Android accessibility bridging, providing 
 
 This plugin is designed for Android and consists of a Kotlin accessibility service and a Rust/JS bridge.
 
-- Rust plugin name: android-accessiblity
-- Kotlin plugin class: AndroidAccessiblityPlugin
+- Rust plugin name: android-accessibility
+- Kotlin plugin class: AndroidAccessibilityPlugin
 - Kotlin accessibility service: TauriAccessibilityService
 
 Implementation entry points:
 
 - Rust commands are defined in [src/commands.rs](src/commands.rs)
 - Mobile bridging is in [src/mobile.rs](src/mobile.rs)
-- Android native implementation is in [android/src/main/java/com/tauri/plugin/androidaccessiblity/AndroidAccessiblityPlugin.kt](android/src/main/java/com/tauri/plugin/androidaccessiblity/AndroidAccessiblityPlugin.kt)
-- Accessibility service is in [android/src/main/java/com/tauri/plugin/androidaccessiblity/TauriAccessibilityService.kt](android/src/main/java/com/tauri/plugin/androidaccessiblity/TauriAccessibilityService.kt)
+- Android native implementation is in [android/src/main/java/com/tauri/plugin/androidaccessibility/AndroidAccessibilityPlugin.kt](android/src/main/java/com/tauri/plugin/androidaccessibility/AndroidAccessibilityPlugin.kt)
+- Accessibility service is in [android/src/main/java/com/tauri/plugin/androidaccessibility/TauriAccessibilityService.kt](android/src/main/java/com/tauri/plugin/androidaccessibility/TauriAccessibilityService.kt)
 
 ## 2. Usage in Tauri App
 
 Directly add:
 
 ```bash
-bun tauri add android-accessiblity
+bun tauri add android-accessibility
 ```
 
 Or add it manually as follows：
@@ -64,7 +64,7 @@ import {
         performGesture,
         performGlobalAction,
         performNodeAction,
-} from 'tauri-plugin-android-accessiblity-api'
+} from 'tauri-plugin-android-accessibility-api'
 
 const status = await checkAccessibilityEnabled()
 if (!status.enabled) {

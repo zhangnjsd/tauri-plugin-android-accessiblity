@@ -1,4 +1,4 @@
-# Tauri Plugin Android Accessiblity
+# Tauri Plugin Android Accessibility
 
 基于 Tauri v2 的移动端插件，用于 Android 无障碍能力桥接，提供以下能力：
 
@@ -14,16 +14,16 @@
 
 本插件面向 Android 端，由 Kotlin 无障碍服务和 Rust/JS 桥接组成。
 
-- Rust 插件名：android-accessiblity
-- Kotlin 插件类：AndroidAccessiblityPlugin
+- Rust 插件名：android-accessibility
+- Kotlin 插件类：AndroidAccessibilityPlugin
 - Kotlin 无障碍服务：TauriAccessibilityService
 
 实现入口：
 
 - Rust 命令定义在 [src/commands.rs](src/commands.rs)
 - 移动端桥接在 [src/mobile.rs](src/mobile.rs)
-- Android 原生实现在 [android/src/main/java/com/tauri/plugin/androidaccessiblity/AndroidAccessiblityPlugin.kt](android/src/main/java/com/tauri/plugin/androidaccessiblity/AndroidAccessiblityPlugin.kt)
-- 无障碍服务在 [android/src/main/java/com/tauri/plugin/androidaccessiblity/TauriAccessibilityService.kt](android/src/main/java/com/tauri/plugin/androidaccessiblity/TauriAccessibilityService.kt)
+- Android 原生实现在 [android/src/main/java/com/tauri/plugin/androidaccessibility/AndroidAccessibilityPlugin.kt](android/src/main/java/com/tauri/plugin/androidaccessibility/AndroidAccessibilityPlugin.kt)
+- 无障碍服务在 [android/src/main/java/com/tauri/plugin/androidaccessibility/TauriAccessibilityService.kt](android/src/main/java/com/tauri/plugin/androidaccessibility/TauriAccessibilityService.kt)
 
 ## 2. 在 Tauri App 中使用
 
@@ -39,7 +39,7 @@ bun tauri add android-accessibility
 
 ```rust
 tauri::Builder::default()
-        .plugin(tauri_plugin_android_accessiblity::init())
+        .plugin(tauri_plugin_android_accessibility::init())
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 ```
@@ -62,7 +62,7 @@ import {
         performGesture,
         performGlobalAction,
         performNodeAction,
-} from 'tauri-plugin-android-accessiblity-api'
+} from 'tauri-plugin-android-accessibility-api'
 
 const status = await checkAccessibilityEnabled()
 if (!status.enabled) {

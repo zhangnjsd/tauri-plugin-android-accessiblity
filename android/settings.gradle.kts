@@ -1,1 +1,1 @@
-rootProject.name = "tauri-plugin-android-accessiblity"
+rootProject.name = "tauri-plugin-android-accessibility"

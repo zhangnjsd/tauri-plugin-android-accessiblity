@@ -7,6 +7,6 @@
   ],
   "permissions": [
     "core:default",
-    "android-accessiblity:default"
+    "android-accessibility:default"
   ]
 }
