@@ -9,4 +9,5 @@ permissions = [
 	"allow-perform-gesture",
 	"allow-perform-global-action",
 	"allow-perform-node-action",
+	"allow-type-text",
 ]

@@ -179,4 +179,32 @@ class AndroidAccessibilityPlugin(private val activity: Activity) : Plugin(activi
     val ret = service.performNodeAction(nodeId, action, fallbackToScrollableParent)
     invoke.resolve(JSObject.fromJSONObject(ret))
   }
+
+  @Command
+  fun typeText(invoke: Invoke) {
+    val args = invoke.getArgs()
+    val nodeId = args.getString("nodeId", null)
+    if (nodeId.isNullOrBlank()) {
+      invoke.reject("nodeId is required")
+      return
+    }
+
+    val text = args.getString("text", null)
+    if (text == null) {
+      invoke.reject("text is required")
+      return
+    }
+
+    val service = TauriAccessibilityService.currentInstance()
+    if (service == null) {
+      val ret = JSObject()
+      ret.put("success", false)
+      ret.put("message", "Accessibility service is not running or not enabled")
+      invoke.resolve(ret)
+      return
+    }
+
+    val ret = service.typeText(nodeId, text)
+    invoke.resolve(JSObject.fromJSONObject(ret))
+  }
 }

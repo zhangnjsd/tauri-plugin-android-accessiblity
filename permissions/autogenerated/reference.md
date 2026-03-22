@@ -12,6 +12,7 @@ Default permissions for the plugin
 - `allow-perform-gesture`
 - `allow-perform-global-action`
 - `allow-perform-node-action`
+- `allow-type-text`
 
 ## Permission Table
 
@@ -226,6 +227,32 @@ Enables the ping command without any pre-configured scope.
 <td>
 
 Denies the ping command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`android-accessibility:allow-type-text`
+
+</td>
+<td>
+
+Enables the type_text command without any pre-configured scope.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+`android-accessibility:deny-type-text`
+
+</td>
+<td>
+
+Denies the type_text command without any pre-configured scope.
 
 </td>
 </tr>

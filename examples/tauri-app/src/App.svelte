@@ -8,9 +8,11 @@
     performGesture,
     performGlobalAction,
     performNodeAction,
+    typeText,
   } from '../../../dist-js/index.js'
 
   let logs = $state([])
+  let pingValue = $state('Pong!')
   let nodeId = $state('0')
   let maxDepth = $state(6)
   let maxChildrenPerNode = $state(30)
@@ -28,6 +30,8 @@
 
   let nodeAction = $state('scrollForward')
   let fallbackToScrollableParent = $state(true)
+  let textToType = $state('Hello from tauri-plugin-android-accessibility')
+  let typeTextTargetValue = $state('')
 
   function now() {
     return new Date().toLocaleTimeString()
@@ -62,7 +66,7 @@
   }
 
   async function testPing() {
-    return runCase('ping', () => ping('Pong!'))
+    return runCase('ping', () => ping(pingValue))
   }
 
   async function testCheckAccessibilityEnabled() {
@@ -163,12 +167,22 @@
     )
   }
 
+  async function testTypeText() {
+    return runCase('typeText', () =>
+      typeText({
+        nodeId,
+        text: textToType,
+      }),
+    )
+  }
+
   async function runAll() {
     pushLog('runAll', 'start')
     await testPing()
     await testCheckAccessibilityEnabled()
     await testGetFrontmostUiTree()
     await testClickNode()
+    await testTypeText()
     await testPerformNodeAction()
     await testPerformGlobalAction()
     await testOpenAccessibilitySettings()
@@ -181,6 +195,22 @@
 
   <div class="controls">
     <div class="line">
+      <label for="typeTextTargetInput">typeTextTargetInput</label>
+      <input
+        id="typeTextTargetInput"
+        type="text"
+        bind:value={typeTextTargetValue}
+        placeholder="This is the target input for typeText testing"
+      />
+      <button onclick={() => (typeTextTargetValue = '')}>Clear Target</button>
+    </div>
+  </div>
+
+  <div class="controls">
+    <div class="line">
+      <label for="pingValue">pingValue</label>
+      <input id="pingValue" type="text" bind:value={pingValue} placeholder="Pong!" />
+
       <label for="maxDepth">maxDepth</label>
       <input id="maxDepth" type="number" min="1" max="30" bind:value={maxDepth} />
 
@@ -202,6 +232,9 @@
     <div class="line">
       <label for="nodeId">nodeId</label>
       <input id="nodeId" type="text" bind:value={nodeId} placeholder="0.1.2" />
+
+      <label for="textToType">textToType</label>
+      <input id="textToType" type="text" bind:value={textToType} placeholder="Text to send by typeText" />
     </div>
 
     <div class="line">
@@ -268,6 +301,7 @@
     <button onclick={testOpenAccessibilitySettings}>Open Settings</button>
     <button onclick={testGetFrontmostUiTree}>Get UI Tree</button>
     <button onclick={testClickNode}>Click Node</button>
+    <button onclick={testTypeText}>Type Text (Plugin)</button>
     <button onclick={testPerformNodeAction}>Perform Node Action</button>
     <button onclick={testPerformGlobalAction}>Perform Global Action</button>
     <button onclick={testPerformTapGesture}>Tap Gesture</button>

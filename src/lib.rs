@@ -43,7 +43,8 @@ pub fn init<R: Runtime>() -> TauriPlugin<R> {
       commands::click_node,
       commands::perform_gesture,
       commands::perform_global_action,
-      commands::perform_node_action
+      commands::perform_node_action,
+      commands::type_text
     ])
     .setup(|app, api| {
       #[cfg(mobile)]

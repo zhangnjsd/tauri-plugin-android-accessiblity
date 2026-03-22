@@ -83,4 +83,11 @@ impl<R: Runtime> AndroidAccessibility<R> {
       .run_mobile_plugin("performNodeAction", payload)
       .map_err(Into::into)
   }
+
+  pub fn type_text(&self, payload: TypeTextRequest) -> crate::Result<TypeTextResponse> {
+    self
+      .0
+      .run_mobile_plugin("typeText", payload)
+      .map_err(Into::into)
+  }
 }

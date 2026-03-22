@@ -97,3 +97,15 @@ pub(crate) async fn perform_node_action<R: Runtime>(
 ) -> Result<NodeActionResponse> {
     app.android_accessibility().perform_node_action(payload)
 }
+
+/**
+ * Type text
+ * This command sets text content on a specific editable accessibility node.
+ */
+#[command]
+pub(crate) async fn type_text<R: Runtime>(
+    app: AppHandle<R>,
+    payload: TypeTextRequest,
+) -> Result<TypeTextResponse> {
+    app.android_accessibility().type_text(payload)
+}

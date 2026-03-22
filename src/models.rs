@@ -156,3 +156,17 @@ pub struct NodeActionResponse {
   pub performed_on_node_id: Option<String>,
   pub message: Option<String>,
 }
+
+#[derive(Debug, Clone, Deserialize, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct TypeTextRequest {
+  pub node_id: String,
+  pub text: String,
+}
+
+#[derive(Debug, Clone, Deserialize, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct TypeTextResponse {
+  pub success: bool,
+  pub message: Option<String>,
+}

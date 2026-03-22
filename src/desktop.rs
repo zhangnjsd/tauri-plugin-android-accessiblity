@@ -69,4 +69,10 @@ impl<R: Runtime> AndroidAccessibility<R> {
       message: Some("Accessibility actions are only available on Android".to_string()),
     })
   }
+  pub fn type_text(&self, _payload: TypeTextRequest) -> crate::Result<TypeTextResponse> {
+    Ok(TypeTextResponse {
+      success: false,
+      message: Some("Accessibility actions are only available on Android".to_string()),
+    })
+  }
 }

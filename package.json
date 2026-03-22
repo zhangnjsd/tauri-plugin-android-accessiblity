@@ -1,6 +1,6 @@
 {
   "name": "tauri-plugin-android-accessibility-api",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "author": "ShizukuAqua",
   "description": "A Tauri plugin that supports Android accessibility features, allowing Tauri applications to interact with Android's accessibility services for enhanced functionality and user experience.",
   "license": "MIT",

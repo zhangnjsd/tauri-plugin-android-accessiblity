@@ -131,6 +131,16 @@ export interface NodeActionResponse {
   message?: string | null
 }
 
+export interface TypeTextRequest {
+  nodeId: string
+  text: string
+}
+
+export interface TypeTextResponse {
+  success: boolean
+  message?: string | null
+}
+
 export async function checkAccessibilityEnabled(): Promise<AccessibilityPermissionStatus> {
   return await invoke<AccessibilityPermissionStatus>('plugin:android-accessibility|check_accessibility_enabled')
 }
@@ -165,6 +175,12 @@ export async function performGlobalAction(payload: GlobalActionRequest): Promise
 
 export async function performNodeAction(payload: NodeActionRequest): Promise<NodeActionResponse> {
   return await invoke<NodeActionResponse>('plugin:android-accessibility|perform_node_action', {
+    payload,
+  })
+}
+
+export async function typeText(payload: TypeTextRequest): Promise<TypeTextResponse> {
+  return await invoke<TypeTextResponse>('plugin:android-accessibility|type_text', {
     payload,
   })
 }

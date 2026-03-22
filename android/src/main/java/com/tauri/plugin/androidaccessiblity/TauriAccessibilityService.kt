@@ -5,6 +5,7 @@ import android.accessibilityservice.GestureDescription
 import android.graphics.Path
 import android.graphics.Rect
 import android.os.Build
+import android.os.Bundle
 import android.view.accessibility.AccessibilityEvent
 import android.view.accessibility.AccessibilityNodeInfo
 import org.json.JSONArray
@@ -226,6 +227,49 @@ class TauriAccessibilityService : AccessibilityService() {
 
     ret.put("success", success)
     ret.put("performedOnNodeId", if (success) nodeId else JSONObject.NULL)
+    ret.put("message", message)
+    return ret
+  }
+
+  fun typeText(nodeId: String, text: String): JSONObject {
+    val ret = JSONObject()
+    val root = rootInActiveWindow
+
+    if (root == null) {
+      ret.put("success", false)
+      ret.put("message", "AccessibilityService has no active window")
+      return ret
+    }
+
+    val target = findNodeById(root, nodeId)
+    if (target == null) {
+      ret.put("success", false)
+      ret.put("message", "nodeId not found in active window")
+      return ret
+    }
+
+    val arguments = Bundle().apply {
+      putCharSequence(AccessibilityNodeInfo.ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE, text)
+    }
+
+    var success = target.performAction(AccessibilityNodeInfo.ACTION_SET_TEXT, arguments)
+    var message = if (success) "text typed" else "failed to set text"
+
+    if (!success) {
+      val focused = target.performAction(AccessibilityNodeInfo.ACTION_FOCUS)
+      if (focused || target.isFocused) {
+        success = target.performAction(AccessibilityNodeInfo.ACTION_SET_TEXT, arguments)
+        message = if (success) {
+          "text typed after focus fallback"
+        } else {
+          "failed to set text after focus fallback"
+        }
+      } else {
+        message = "failed to set text and failed to focus target node"
+      }
+    }
+
+    ret.put("success", success)
     ret.put("message", message)
     return ret
   }

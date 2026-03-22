@@ -7,6 +7,7 @@ const COMMANDS: &[&str] = &[
   "perform_gesture",
   "perform_global_action",
   "perform_node_action",
+  "type_text",
 ];
 
 fn main() {

@@ -6,6 +6,7 @@ This example app demonstrates all plugin APIs in one debug UI.
 
 - Service checks: `ping`, `checkAccessibilityEnabled`, `openAccessibilitySettings`
 - UI tree and click action: `getFrontmostUiTree`, `clickNode`
+- Text input: `typeText`
 - Gestures: `performGesture` (tap, swipe, two-finger pinch sample)
 - Global actions: `performGlobalAction`
 - Node actions: `performNodeAction` (including scroll actions)

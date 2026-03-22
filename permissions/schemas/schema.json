@@ -391,10 +391,22 @@
           "markdownDescription": "Denies the ping command without any pre-configured scope."
         },
         {
-          "description": "Default permissions for the plugin\n#### This default permission set includes:\n\n- `allow-ping`\n- `allow-check-accessibility-enabled`\n- `allow-open-accessibility-settings`\n- `allow-get-frontmost-ui-tree`\n- `allow-click-node`\n- `allow-perform-gesture`\n- `allow-perform-global-action`\n- `allow-perform-node-action`",
+          "description": "Enables the type_text command without any pre-configured scope.",
+          "type": "string",
+          "const": "allow-type-text",
+          "markdownDescription": "Enables the type_text command without any pre-configured scope."
+        },
+        {
+          "description": "Denies the type_text command without any pre-configured scope.",
+          "type": "string",
+          "const": "deny-type-text",
+          "markdownDescription": "Denies the type_text command without any pre-configured scope."
+        },
+        {
+          "description": "Default permissions for the plugin\n#### This default permission set includes:\n\n- `allow-ping`\n- `allow-check-accessibility-enabled`\n- `allow-open-accessibility-settings`\n- `allow-get-frontmost-ui-tree`\n- `allow-click-node`\n- `allow-perform-gesture`\n- `allow-perform-global-action`\n- `allow-perform-node-action`\n- `allow-type-text`",
           "type": "string",
           "const": "default",
-          "markdownDescription": "Default permissions for the plugin\n#### This default permission set includes:\n\n- `allow-ping`\n- `allow-check-accessibility-enabled`\n- `allow-open-accessibility-settings`\n- `allow-get-frontmost-ui-tree`\n- `allow-click-node`\n- `allow-perform-gesture`\n- `allow-perform-global-action`\n- `allow-perform-node-action`"
+          "markdownDescription": "Default permissions for the plugin\n#### This default permission set includes:\n\n- `allow-ping`\n- `allow-check-accessibility-enabled`\n- `allow-open-accessibility-settings`\n- `allow-get-frontmost-ui-tree`\n- `allow-click-node`\n- `allow-perform-gesture`\n- `allow-perform-global-action`\n- `allow-perform-node-action`\n- `allow-type-text`"
         }
       ]
     }
