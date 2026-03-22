@@ -191,6 +191,18 @@ await performNodeAction({
 - `performedOnNodeId`
 - `message`
 
+### `typeText`
+
+Parameters:
+
+- `nodeId`: 文本框的 Node ID
+- `text`: 要输入的文字
+  
+Returns:
+
+- `success`
+- `message`
+
 ## 4. Android 规范与限制
 
 - 无障碍服务属于高敏感能力，必须由用户在系统设置中手动授权。

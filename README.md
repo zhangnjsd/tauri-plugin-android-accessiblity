@@ -193,6 +193,18 @@ Returns:
 - `performedOnNodeId`
 - `message`
 
+### `typeText`
+
+Parameters:
+
+- `nodeId`: Node ID of EditText
+- `text`: Text to input
+  
+Returns:
+
+- `success`
+- `message`
+
 ## 4. Android Specifications and Limitations
 
 - Accessibility services are highly sensitive capabilities and must be manually authorized by the user in the system settings.
